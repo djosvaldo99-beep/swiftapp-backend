@@ -5,12 +5,12 @@ const PORT = process.env.PORT || 10000;
 
 app.use(express.json());
 
-// Verificación de salud del servidor
+// Verificación operativa del servicio SwiftApp
 app.get('/health', function(req, res) {
   res.status(200).json({ status: 'online', app: 'SwiftApp Argentina', admin: 'Osvaldo' });
 });
 
-// APLICACIÓN VISUAL PRINCIPAL (HTML LIMPIO Y ULTRASEGURO)
+// Interfaz Web Visual para Portales
 app.get('*', function(req, res) {
   const html = [
     '<!DOCTYPE html>',
@@ -92,17 +92,3 @@ app.get('*', function(req, res) {
 app.listen(PORT, '0.0.0.0', function() {
   console.log('SwiftApp corriendo en puerto ' + PORT);
 });
-📦 Paso 2: Tu archivo package.json
-Fijate que tu package.json en GitHub tenga exactamente esto (y nada más):
-
-{
-  "name": "swiftapp-backend",
-  "version": "1.0.0",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  },
-  "dependencies": {
-    "express": "^4.19.2"
-  }
-}
